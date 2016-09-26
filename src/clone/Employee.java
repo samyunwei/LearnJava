@@ -7,6 +7,8 @@ public class Employee implements Cloneable
 	private double salary;
 	private Date hireDay;
 	
+	public static final int NAME_SIZE = 40;
+	public static final int RECORD_SIZE = 100;
 	
 	public Employee(String n,double s,int year,int month,int day)
 	{
@@ -14,6 +16,12 @@ public class Employee implements Cloneable
 		salary = s;
 		GregorianCalendar calendar = new GregorianCalendar(year,month-1,day);
 		hireDay = calendar.getTime();
+	}
+	
+	public Employee()
+	{
+		name = new String();
+		hireDay = new GregorianCalendar().getTime();
 	}
 	
 	public String getName()

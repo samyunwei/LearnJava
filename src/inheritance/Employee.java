@@ -1,7 +1,8 @@
 package inheritance;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.GregorianCalendar;
-public class Employee {
+public class Employee implements Serializable{
 	private String name;
 	private double salary;
 	private Date hireDay;
@@ -34,6 +35,11 @@ public class Employee {
 	{
 		double raise = salary * byPercent / 100;
 		salary += raise;
+	}
+	
+	public String toString()
+	{
+		return getClass().getName() + "[name=" + name+",salary=" +salary+",hireDay=" + hireDay+"]";
 	}
 	
 }
